@@ -1,17 +1,84 @@
-<ion-header>
+
+<ion-header class="header-background-md">
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <button ion-button menuToggle>
+        <ion-icon name="menu" > LOGOTIPO - TITULO</ion-icon>            
+    </button>
   </ion-navbar>
 </ion-header>
 
+
+    <ion-navbar no-border-bottom>
+      <ion-title>
+        Segments
+      </ion-title>
+    </ion-navbar>
+  
+    
+
+  <br><br>
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+   <ion-searchbar placeholder="Buscar..."></ion-searchbar>
+      <ion-toolbar class="toolbar-background-md">
+          <ion-segment [(ngModel)]="pet">
+            <ion-segment-button value="Populares">
+              Populares
+            </ion-segment-button>
+            <ion-segment-button value="Recomendados">
+              Recomendados
+            </ion-segment-button>
+            <ion-segment-button value="Eventos">
+                Eventos
+              </ion-segment-button>
+          </ion-segment>
+        </ion-toolbar>
+
+        <div [ngSwitch]="pet">
+            <ion-list *ngSwitchCase="'Populares'">
+              
+                 <ion-item>
+                    <div class="imageHolder">                          
+                     <img src="assets/imgs/CAMINO.jpg">
+                        <div class="caption">Parque Sinaloa - Jardin botanico</div>
+                    </div>                    
+                  </ion-item>
+                
+
+              <ion-item>
+                 
+                    <div class="imageHolder">                              
+                      <img src="assets/imgs/parque.jpg">
+                      <div class="caption">La pergola - El cerro</div>
+                    </div>
+              </ion-item>
+            </ion-list>
+        </div>
+
+      <div [ngSwitch]="pet">
+        <ion-slides pager *ngSwitchCase="'Recomendados'">
+            <ion-slide *ngFor="let slide of slides">
+              <ion-toolbar>
+                  <ion-buttons left>
+                      <button ion-button color="primary" style="size:200px"><i class="fa fa-arrow-circle-left" aria-hidden="true" ></i></button>
+                    </ion-buttons>
+                <ion-buttons end>
+                  <button ion-button color="primary"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                </ion-buttons>
+              </ion-toolbar>
+              <div class="image centrado">
+              <img [src]="slide.image" class="slide-image "/>
+              </div>
+              <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+              <p [innerHTML]="slide.description"></p>
+            </ion-slide>
+            
+          </ion-slides>
+      </div>
+  <hr>
+  <h2 class="centrado">SABIAS QUE ? ..</h2>
+    <P>info</P>
+  <hr>
+
+
+  
 </ion-content>
