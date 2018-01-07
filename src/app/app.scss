@@ -4,25 +4,54 @@
     text-align: center;
   }
 
+
+
 .toolbar-background-md{
-    background: white;
+    background: transparent;
 }
 .header-background-md{
-    background: black;
+    background: transparent;
 }
 .tabs-background-md{
-    background: black;
+    background: transparent;
 }
 
 .image{
-position: relative;
+text-align: center;
+position: center;
 padding-top: 10px;
 margin-top: 5px;
-width: 640px;
-height: 250px;
+width: 430px;
+height: 300px;
+}
+.image .caption2{
+position: absolute;
+height: 50px;
+size: 20px;
+bottom: 0px;
+left: 5px;
+color: white;
+background: transparent;
+text-align:center;
+font-weight:bold;
+opacity:0.9;
+}
+
+.image .caption3{
+    position: absolute;
+    height: 550px;
+    size: 20px;
+    bottom: 0px;
+    left: 35px;
+    color: white;
+    background: transparent;
+    text-align:center;
+    font-weight:bold;
+    opacity:0.9;
 
 
 }
+
 .h3{
     position: relative;
     top: 200px;
@@ -34,7 +63,7 @@ h2 span {
     
    color: white;
     
-   font: bold 24px/45px Helvetica, Sans-Serif;
+   font: bold 20px/30px Helvetica, Sans-Serif;
     
    letter-spacing: -1px;
     
@@ -49,15 +78,19 @@ h2 span {
 
 
 .imageHolder {
-    position: relative;
-    width: 640px;
+    //position: relative;
+    text-align: center;
+    position: center;
+    padding-top: 10px;
+    margin-top: 5px;
+    width: 390px;
     height: 250px;
 }
 .imageHolder .caption {
     position: absolute;
-    height: 60px;
+    height: 100px;
     bottom: 0px;
-    left: 20px;
+    left: 50px;
     color: white;
     background: transparent;
 	text-align:center;

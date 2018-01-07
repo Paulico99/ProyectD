@@ -2,7 +2,7 @@
 <ion-header class="header-background-md">
   <ion-navbar>
     <button ion-button menuToggle>
-        <ion-icon name="menu" > LOGOTIPO - TITULO</ion-icon>            
+        <ion-icon name="menu" style="color:black" > LOGOTIPO - TITULO</ion-icon>            
     </button>
   </ion-navbar>
 </ion-header>
@@ -34,7 +34,25 @@
         </ion-toolbar>
 
         <div [ngSwitch]="pet">
-            <ion-list *ngSwitchCase="'Populares'">
+          <ion-slides  *ngSwitchCase="'Populares'">  
+            <ion-slide *ngFor="let slide of slides1">
+                
+                <div class="image">
+                  <img [src]="slide.image" class="slide-image "/>
+                  <h4 class="caption2 slide-title" [innerHTML]="slide.title  + ' - ' + slide.description"></h4>
+                  <ion-toolbar class="caption3">       
+                      <ion-buttons  left>
+                          <ion-icon  color="primary" name="eye"></ion-icon><button ion-button color="light" style="size:200px" [innerHTML]="slide.visitas"></button>
+                        </ion-buttons>
+                    </ion-toolbar> 
+                  
+                </div>
+               
+              </ion-slide>
+              
+            </ion-slides>
+          <!--  
+          <ion-list *ngSwitchCase="'Populares'">
               
                  <ion-item>
                     <div class="imageHolder">                          
@@ -52,31 +70,50 @@
                     </div>
               </ion-item>
             </ion-list>
+          -->
         </div>
 
       <div [ngSwitch]="pet">
-        <ion-slides pager *ngSwitchCase="'Recomendados'">
-            <ion-slide *ngFor="let slide of slides">
-              <ion-toolbar>
-                  <ion-buttons left>
-                      <button ion-button color="primary" style="size:200px"><i class="fa fa-arrow-circle-left" aria-hidden="true" ></i></button>
-                    </ion-buttons>
-                <ion-buttons end>
-                  <button ion-button color="primary"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
-                </ion-buttons>
-              </ion-toolbar>
-              <div class="image centrado">
-              <img [src]="slide.image" class="slide-image "/>
-              </div>
-              <h2 class="slide-title" [innerHTML]="slide.title"></h2>
-              <p [innerHTML]="slide.description"></p>
+        <ion-slides  *ngSwitchCase="'Recomendados'">
+            <ion-slide *ngFor="let slide of slides2">
+              
+              <div class="image">
+                <img [src]="slide.image" class="slide-image "/>
+                <h4 class="caption2 slide-title" [innerHTML]="slide.title + ' - ' +  slide.description"></h4>
+                
+                <ion-toolbar class="caption3">       
+                    <ion-buttons  left>
+                        <ion-icon  color="primary" name="eye"></ion-icon><button ion-button round color="light" style="size:200px" [innerHTML]="slide.visitas"></button>
+                      </ion-buttons>
+                  </ion-toolbar>  
+              </div>  
+              
             </ion-slide>
             
           </ion-slides>
       </div>
+
+      <div [ngSwitch]="pet">
+          <ion-slides  *ngSwitchCase="'Eventos'">
+              <ion-slide *ngFor="let slide of slides3">
+                
+                <div class="image">
+                  <img [src]="slide.image" class="slide-image "/>
+                  <h4 class="caption2 slide-title" [innerHTML]="slide.title + ' - ' +  slide.description"></h4>
+                    <ion-toolbar class="caption3">       
+                      <ion-buttons  left>
+                          <ion-icon  color="primary" name="eye"></ion-icon><button ion-button color="light" style="size:200px" [innerHTML]="slide.visitas"></button>
+                        </ion-buttons>
+                    </ion-toolbar>      
+                            
+                </div>  
+                
+              </ion-slide>
+              
+            </ion-slides>
+        </div>
   <hr>
-  <h2 class="centrado">SABIAS QUE ? ..</h2>
-    <P>info</P>
+  <button ion-button block outline color="primary">More...</button>
   <hr>
 
 
